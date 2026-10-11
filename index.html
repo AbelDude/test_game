@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d89a53">
+  <title>Long Trail — A Prairie Survival Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="masthead">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span><div><p class="eyebrow">A PRAIRIE SURVIVAL STORY</p><h1>Long Trail</h1></div></div>
+      <p class="tagline">The horizon is wide. The herds are few.</p>
+    </header>
+
+    <section class="game-frame" aria-label="Long Trail game">
+      <div class="hud" aria-live="polite">
+        <div class="hud-card food-card"><span class="hud-label">PROVISIONS</span><div class="food-line"><span class="food-icon" aria-hidden="true">◆</span><div class="meter"><div id="food-fill" class="meter-fill"></div></div><strong id="food-value">100</strong></div></div>
+        <div class="hud-card distance-card"><span class="hud-label">TRAIL</span><strong><span id="distance-value">0</span><small> m</small></strong></div>
+        <div class="hud-card herd-card"><span class="hud-label">HERDS FOUND</span><strong id="herd-value">0</strong></div>
+      </div>
+      <canvas id="game" width="960" height="540" aria-label="Cowboy platform game. Move with A and D or arrow keys, jump with W or Space, and shoot with J or click."></canvas>
+      <div class="toast" id="toast" aria-live="polite"></div>
+      <div class="screen" id="start-screen">
+        <div class="screen-card">
+          <p class="eyebrow">A LONG WAY FROM TOWN</p><h2>Ride the open range.</h2>
+          <p>Keep moving, watch your provisions, and search the prairie for scarce buffalo herds.</p>
+          <button id="start-button" class="primary-button">Saddle up <span aria-hidden="true">→</span></button>
+          <div class="key-hint"><span>A / D</span> ride <i>·</i> <span>SPACE</span> jump <i>·</i> <span>J</span> shoot</div>
+        </div>
+      </div>
+      <div class="screen hidden" id="end-screen">
+        <div class="screen-card">
+          <p class="eyebrow" id="end-eyebrow">THE TRAIL GOES QUIET</p><h2 id="end-title">Out of provisions.</h2>
+          <p id="end-copy">The prairie is still wide. Your journey has ended.</p>
+          <div class="final-stats"><span>TRAIL RIDDEN <strong id="final-distance">0 m</strong></span><span>HERDS FOUND <strong id="final-herds">0</strong></span></div>
+          <button id="restart-button" class="primary-button">Ride again <span aria-hidden="true">↻</span></button>
+        </div>
+      </div>
+    </section>
+    <footer class="footer"><p>Stay light on your feet. A herd may be just beyond the next ridge.</p><p class="footer-controls">MOVE <b>A D</b> <b>← →</b><span>JUMP <b>SPACE</b></span><span>SHOOT <b>J</b> <b>CLICK</b></span></p></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
